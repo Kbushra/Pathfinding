@@ -13,7 +13,8 @@ function alg()
 				y: global.tile_size/2 + j*global.tile_size,
 				weight: -1,
 				priority: -1,
-				previous: []
+				previous: [],
+				next: [] //Unused
 			};
 		}
 	}
@@ -29,7 +30,7 @@ function alg()
 		{
 			var inds = queue[i];
 			var nbs = neighbours(global.node, inds[0], inds[1]);
-			var changed_nbs = set_weights(global.node, inds[0], inds[1], nbs);
+			var changed_nbs = set_weights(global.node, inds[0], inds[1], nbs, true);
 			new_nodes = array_concat(new_nodes, changed_nbs);
 			
 			if (set_end) { break; }
@@ -45,4 +46,12 @@ function alg()
 		
 		count++;
 	}
+	
+	var path = [ global.node[_end[0]][_end[1]] ];
+	while (array_length(path[0].previous) == 2 && !array_equals(path[0].previous, _start))
+	{
+		array_insert(path, 0, global.node[ path[0].previous[0] ][ path[0].previous[1] ]);
+	}
+	
+	goto_ind = [path[0].x, path[0].y];
 }
