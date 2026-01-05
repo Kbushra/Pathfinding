@@ -20,8 +20,8 @@
   "name":"dijkstra",
   "resources":[
     {"id":{"name":"AI","path":"objects/AI/AI.yy",},},
+    {"id":{"name":"AStar","path":"objects/AStar/AStar.yy",},},
     {"id":{"name":"Block","path":"objects/Block/Block.yy",},},
-    {"id":{"name":"Dijkstra","path":"objects/Dijkstra/Dijkstra.yy",},},
     {"id":{"name":"End","path":"objects/End/End.yy",},},
     {"id":{"name":"FlowField","path":"objects/FlowField/FlowField.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
